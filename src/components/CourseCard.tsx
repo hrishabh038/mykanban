@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import type { twMerge } from "tailwind-merge";
+import { getInitials } from "../utils/helpers/helpers";
 
 type CourseCardProps = {
   username: string
@@ -14,21 +16,14 @@ type CourseCardProps = {
   view?: "grid" | "list"; // determines layout
 };
 
-const getInitials = (name: string) => {
-  const names = name.trim().split(" ");
-  if (names.length === 1) return names[0][0].toUpperCase();
-  return (names[0][0] + names[1][0]).toUpperCase();
-};
-
 const CourseCard: React.FC<CourseCardProps> = ({
+  id,
   username,
-  link,
   title,
   description,
   image,
   createdAt,
   updatedAt,
-  creatorName,
   creatorAvatar,
   view = "grid",
 }) => {
@@ -64,7 +59,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
         }`}
       >
         {/* Title */}
-        <h3 className="font-bold text-lg sm:text-xl line-clamp-2 hover:underline"><Link to={link}>{title}</Link></h3>
+        <h3 className="font-bold text-lg sm:text-xl line-clamp-2 hover:underline"><Link to={`/courses/${id}`}>{title}</Link></h3>
 
         {/* Description */}
         <p className="text-neutral-400 text-sm sm:text-base line-clamp-3">
@@ -77,15 +72,15 @@ const CourseCard: React.FC<CourseCardProps> = ({
             {creatorAvatar ? (
               <img
                 src={creatorAvatar}
-                alt={creatorName}
+                alt={username}
                 className="w-6 h-6 rounded-full object-cover border border-neutral-700"
               />
             ) : (
               <div className="w-6 h-6 rounded-full bg-neutral-700 flex items-center justify-center text-[10px] text-neutral-100 font-semibold">
-                {getInitials(creatorName)}
+                {getInitials(username)}
               </div>
             )}
-            <span className="text-neutral-400 text-xs">{creatorName}</span>
+            <span className="text-neutral-400 text-xs">{username}</span>
           </Link>
           <span className="text-neutral-400 text-[10px] sm:text-xs">
             {updatedAt ? `Updated: ${updatedAt}` : `Created: ${createdAt}`}

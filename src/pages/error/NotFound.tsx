@@ -22,7 +22,7 @@ const NotFound = () => {
       {/* CTA Button */}
       <Link
         to="/"
-        className="bg-purple-500 hover:bg-purple-600 text-neutral-100 font-semibold px-6 py-3 rounded-md transition-all"
+        className="bg-purple-500 hover:bg-purple-600 text-neutral-100 font-semibold px-6 py-3 rounded transition-all"
       >
         Go Back Home
       </Link>

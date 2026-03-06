@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../../components/components";
+import { Button, InteractiveBackground } from "../../components/components";
 
 type Props = {};
 
@@ -19,7 +19,8 @@ const Home = (props: Props) => {
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-neutral-900/35">
+    <section className="relative overflow-hidden cursor-default ">
+      <InteractiveBackground />
       {/* Background glow */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-[-160px] h-[280px] w-[280px] sm:h-[360px] sm:w-[360px] md:h-[420px] md:w-[420px] -translate-x-1/2 rounded-full bg-neutral-800/30 blur-3xl" />
@@ -29,7 +30,7 @@ const HeroSection = () => {
         <div className="text-center">
           {/* Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-100">
-            Learning Hub
+            <span className="bbh-bartle-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Learning Hub</span>
             <span className="block mt-2 text-neutral-400">
               build courses from anywhere
             </span>
@@ -85,7 +86,7 @@ const HowItWorks = () => {
         {steps.map((step, index) => (
           <div
             key={step.title}
-            className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-6"
+            className="rounded border border-neutral-800 bg-neutral-900/50 p-6"
           >
             <span className="text-sm font-medium text-neutral-500">
               Step {index + 1}
@@ -125,7 +126,7 @@ const WhyLearningHub = () => {
           {reasons.map((reason) => (
             <li
               key={reason}
-              className="rounded-lg border border-neutral-800 bg-neutral-900/50 px-6 py-4 text-neutral-300 text-sm"
+              className="rounded border border-neutral-800 bg-neutral-900/50 px-6 py-4 text-neutral-300 text-sm"
             >
               {reason}
             </li>
@@ -145,7 +146,7 @@ const PublicPrivateCourses = () => {
 
       <div className="mt-16 grid gap-8 md:grid-cols-2">
         {/* Public */}
-        <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-8">
+        <div className="rounded border border-neutral-800 bg-neutral-900/50 p-8">
           <h3 className="text-lg font-semibold text-neutral-100">
             Public Courses
           </h3>
@@ -156,7 +157,7 @@ const PublicPrivateCourses = () => {
         </div>
 
         {/* Private */}
-        <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-8">
+        <div className="rounded border border-neutral-800 bg-neutral-900/50 p-8">
           <h3 className="text-lg font-semibold text-neutral-100">
             Private Courses
           </h3>
@@ -187,7 +188,7 @@ const FeaturedCourses = () => {
         {featured.map((course) => (
           <div
             key={course}
-            className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-6 hover:border-neutral-700 transition-colors"
+            className="rounded border border-neutral-800 bg-neutral-900/50 p-6 hover:border-neutral-700 transition-colors"
           >
             <h3 className="text-sm font-semibold text-neutral-100">{course}</h3>
             <p className="mt-2 text-xs text-neutral-400">
@@ -252,7 +253,7 @@ const CreateAndLearn = () => {
             {createItems.map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-6"
+                className="rounded border border-neutral-800 bg-neutral-900/50 p-6"
               >
                 <h4 className="text-sm font-medium text-neutral-100">
                   {item.title}
@@ -275,7 +276,7 @@ const CreateAndLearn = () => {
             {learnItems.map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-6"
+                className="rounded border border-neutral-800 bg-neutral-900/50 p-6"
               >
                 <h4 className="text-sm font-medium text-neutral-100">
                   {item.title}
@@ -294,7 +295,7 @@ const CreateAndLearn = () => {
 
 const CTASection = () => {
   return (
-    <section className="relative bg-neutral-950 py-24">
+    <section className="relative bg-neutral-950 pt-24">
       {/* Subtle divider */}
       <div className="absolute inset-x-0 top-0 h-px bg-neutral-800" />
 

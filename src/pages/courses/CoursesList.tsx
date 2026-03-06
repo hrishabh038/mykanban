@@ -9,12 +9,13 @@ const CoursesList = (props: Props) => {
     <div className=" flex flex-col gap-4">
       {courses.map((course, index) => (
         <CourseCard
+          id={course.id}
           title={course.title}
           description={course.description}
           image={course.image}
           createdAt={course.createdAt}
           updatedAt={course.updatedAt}
-          creatorName={course.creatorName}
+          username={course.username}
           creatorAvatar={course.creatorAvatar}
           view="list"
         />

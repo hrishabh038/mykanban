@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Inputarea, PasswordInput } from "../../components/components";
+import ThridPartyAuth from "./ThridPartyAuth";
+import useAuth from "../../hooks/useAuth";
+
 
 type Props = {};
 
 const Login = (props: Props) => {
+  const {login} = useAuth()
   return (
     <div className="flex flex-col gap-4 w-full sm:w-[600px] ">
       <div className="flex flex-col gap-6 rounded border border-neutral-800 p-4 bg-neutral-900">
@@ -18,14 +22,12 @@ const Login = (props: Props) => {
         </div>
         <div className="flex flex-col gap-4">
           <Inputarea label="Username" placeholder="Enter username" />
-          <PasswordInput
-            label="Password"
-            placeholder="Enter password"
-          />
+          <PasswordInput label="Password" placeholder="Enter password" />
         </div>
         <div>
-          <Button label="Login" />
+          <Button label="Login" onClick={() => login()} />
         </div>
+        <ThridPartyAuth />
       </div>
       <Link
         to={"/auth/register"}

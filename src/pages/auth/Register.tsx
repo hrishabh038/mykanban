@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Inputarea, PasswordInput } from "../../components/components";
 import { Link } from "react-router-dom";
+import ThridPartyAuth from "./ThridPartyAuth";
 
 type Props = {};
 
@@ -23,8 +24,9 @@ const Register = (props: Props) => {
           <PasswordInput label="Password" placeholder="Enter password" />
         </div>
         <div>
-          <Button label="Login" />
+          <Button label="Create new account" />
         </div>
+        <ThridPartyAuth />
       </div>
       <Link
         to={"/auth/login"}

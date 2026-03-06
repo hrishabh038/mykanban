@@ -12,6 +12,8 @@ const Register = lazy(() => import("./auth/Register"));
 const Home = lazy(() => import("./common/Home"));
 const PrivacyPolicy = lazy(() => import("./common/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./common/TermsOfService"));
+//User
+const Profile = lazy(() => import("./common/Profile"));
 //error
 const NotFound = lazy(() => import("./error/NotFound"));
 //courses
@@ -39,20 +41,22 @@ const Routing = (props: Props) => {
         <Route path="home" element={<Home />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        {/* USER */}
+        <Route path="/profile/:username" element={<Profile />} />
         {/* COURSES */}
         <Route
           path="/courses"
           element={<Navigate to="/courses/listing" replace />}
         />
-        <Route path="courses" element={<CoursesLayout />}>
+        <Route path="courses"  element={<CoursesLayout />}>
           <Route path="listing" element={<CoursesList />} />
           <Route
             path="created-by-you"
             element={<CoursesCreatedByYou />}
           />
           <Route path="enrolled" element={<CoursesEnrolled />} />
-          <Route path=":courseId" element={<CourseDescription />} />
         </Route>
+        <Route path="courses/:courseId" element={<CourseDescription />} />
       </Routes>
     </Suspense>
   );

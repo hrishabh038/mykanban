@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LockIcon, LockOpenIcon } from "../../assets/icons/icons";
+import { LuEye, LuEyeClosed } from "react-icons/lu";
 import type { InputHTMLAttributes } from "react";
 
 type PasswordInputProps = {
@@ -55,7 +55,7 @@ const PasswordInput = ({
           className="absolute inset-y-0 right-3 flex items-center text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
           aria-label={showPassword ? "Hide password" : "Show password"}
         >
-          {showPassword ? <LockOpenIcon size={18} /> : <LockIcon size={18} />}
+          {showPassword ? <LuEye size={18} /> : <LuEyeClosed size={18} />}
         </button>
       </div>
 

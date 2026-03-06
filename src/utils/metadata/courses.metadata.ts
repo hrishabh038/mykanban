@@ -1,6 +1,6 @@
 const courses = [
   {
-    id: "1",
+    id: "mastering-react-from-beginner-fundamentals-to-advanced-patterns-hooks-and-performance-optimization-techniques",
     title:
       "Mastering React: From Beginner Fundamentals to Advanced Patterns, Hooks, and Performance Optimization Techniques",
     description:
@@ -9,11 +9,11 @@ const courses = [
       "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
     createdAt: "2025-01-10",
     updatedAt: "2025-02-05",
-    creatorName: "John Doe",
+    username: "John Doe",
     creatorAvatar: "https://i.pravatar.cc/150?img=12",
   },
   {
-    id: "2",
+    id: "complete-music-production-guide-recording-mixing-sound-design-and-mastering-across-multiple-genres",
     title:
       "Complete Music Production Guide: Recording, Mixing, Sound Design, and Mastering Across Multiple Genres",
     description:
@@ -21,10 +21,10 @@ const courses = [
     image:
       "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
     createdAt: "2025-01-18",
-    creatorName: "Jane Smith",
+    username: "Jane Smith",
   },
   {
-    id: "3",
+    id: "web-development-bootcamp-html-css-javascript-modern-frameworks-apis-and-deployment-strategies",
     title:
       "Web Development Bootcamp: HTML, CSS, JavaScript, Modern Frameworks, APIs, and Deployment Strategies",
     description:
@@ -33,20 +33,20 @@ const courses = [
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     createdAt: "2024-12-20",
     updatedAt: "2025-01-30",
-    creatorName: "Alex Johnson",
+    username: "Alex Johnson",
   },
   {
-    id: "4",
+    id: "mindful-living-and-productivity-building-focus-healthy-habits-and-mental-clarity-in-a-distracted-world",
     title:
       "Mindful Living and Productivity: Building Focus, Healthy Habits, and Mental Clarity in a Distracted World",
     description:
       "Learn how to cultivate mindfulness, improve productivity, and build sustainable habits. This course blends psychology, neuroscience, and practical exercises to help you stay focused, reduce stress, and create a balanced approach to work and life.",
     createdAt: "2025-02-01",
-    creatorName: "Emily Carter",
+    username: "Emily Carter",
     creatorAvatar: "https://i.pravatar.cc/150?img=45",
   },
   {
-    id: "5",
+    id: "photography-essentials-mastering-composition-lighting-editing-and-storytelling-through-images",
     title:
       "Photography Essentials: Mastering Composition, Lighting, Editing, and Storytelling Through Images",
     description:
@@ -55,8 +55,8 @@ const courses = [
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
     createdAt: "2024-11-15",
     updatedAt: "2025-01-05",
-    creatorName: "Michael Brown",
+    username: "Michael Brown",
   },
 ];
 
-export default courses
+export default courses;
