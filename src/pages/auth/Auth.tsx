@@ -5,7 +5,8 @@ type Props = {};
 
 const Auth = (props: Props) => {
   return (
-    <div className="w-full flex justify-center">
+    <div>
+      Auth
       <Outlet />
     </div>
   );

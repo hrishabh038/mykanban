@@ -16,12 +16,6 @@ const TermsOfService = lazy(() => import("./common/TermsOfService"));
 const Profile = lazy(() => import("./common/Profile"));
 //error
 const NotFound = lazy(() => import("./error/NotFound"));
-//courses
-// const CoursesLayout = lazy(() => import("./courses/CoursesLayout"));
-// const CoursesList = lazy(() => import("./courses/CoursesList"));
-// const CoursesCreatedByYou = lazy(() => import("./courses/CoursesCreatedByYou"));
-// const CoursesEnrolled = lazy(() => import("./courses/CoursesEnrolled"));
-// const CourseDescription = lazy(() => import("./courses/CourseDescription"));
 
 const Routing = (props: Props) => {
   return (
@@ -43,20 +37,6 @@ const Routing = (props: Props) => {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         {/* USER */}
         <Route path="/profile/:username" element={<Profile />} />
-        {/* COURSES */}
-        {/* <Route
-          path="/courses"
-          element={<Navigate to="/courses/listing" replace />}
-        />
-        <Route path="courses"  element={<CoursesLayout />}>
-          <Route path="listing" element={<CoursesList />} />
-          <Route
-            path="created-by-you"
-            element={<CoursesCreatedByYou />}
-          />
-          <Route path="enrolled" element={<CoursesEnrolled />} />
-        </Route>
-        <Route path="courses/:courseId" element={<CourseDescription />} /> */}
       </Routes>
     </Suspense>
   );
