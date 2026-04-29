@@ -1,23 +1,16 @@
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import PageLoading from "./error/PageLoading";
-
-type Props = {};
-
 //auth
 const Auth = lazy(() => import("./auth/Auth"));
 const Login = lazy(() => import("./auth/Login"));
 const Register = lazy(() => import("./auth/Register"));
-//common
-const Home = lazy(() => import("./common/Home"));
-const PrivacyPolicy = lazy(() => import("./common/PrivacyPolicy"));
-const TermsOfService = lazy(() => import("./common/TermsOfService"));
-//User
-const Profile = lazy(() => import("./common/Profile"));
 //error
 const NotFound = lazy(() => import("./error/NotFound"));
+//project
+const Project = lazy(() => import("./project/Project"));
 
-const Routing = (props: Props) => {
+const Routing = () => {
   return (
     <Suspense fallback={<PageLoading />}>
       <Routes>
@@ -30,13 +23,8 @@ const Routing = (props: Props) => {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Route>
-        {/* COMMON */}
-        <Route path="/" element={<Navigate to="/home" replace />} />
-        <Route path="home" element={<Home />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
-        {/* USER */}
-        <Route path="/profile/:username" element={<Profile />} />
+        {/* PROJECT */}
+        <Route path="/project/:projectId" element={<Project />} />
       </Routes>
     </Suspense>
   );
